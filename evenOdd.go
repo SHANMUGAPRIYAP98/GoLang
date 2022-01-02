@@ -45,6 +45,28 @@ func printStudDetails(name string, num1, num2, num3 float64) {
 	fmt.Println("Grade : " + grade)
 }
 
+func evaluateBool() {
+	// assignment the value and evaluating the condition
+	if cond := true; cond == true {
+		fmt.Println("I am in true Block")
+		fmt.Println(&cond)
+	} else {
+		fmt.Println("I am in false Block", cond)
+	}
+
+	//	fmt.Println(cond) cond variable can't be accessed outside if... else block
+}
+
+func findLargestNumber(num1, num2, num3 int) int {
+	if num1 > num2 && num1 > num3 {
+		return num1
+	} else if num2 > num1 && num2 > num3 {
+		return num2
+	} else {
+		return num3
+	}
+}
+
 func main() {
 
 	evenOdd(20)
@@ -52,4 +74,9 @@ func main() {
 	posNegNum(0)
 	posNegNum(-10)
 	printStudDetails("diyashri", 85.5, 98.3, 87.5)
+	evaluateBool()
+
+	a, b, c := 22, 50, 45
+	largestNumber := findLargestNumber(a, b, c)
+	fmt.Printf("%d is the largest number of %d,%d,%d", largestNumber, a, b, c)
 }
